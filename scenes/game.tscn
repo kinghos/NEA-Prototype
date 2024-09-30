@@ -41,5 +41,7 @@ render_target_update_mode = 4
 
 [node name="OpponentCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="PlayerCamera" type="Camera2D" parent="SubViewport"]
 position = Vector2(540, 1200)

@@ -36,6 +36,7 @@ func _player_connected(id):
 # Called on server/clients
 func _player_disconnected(id):
 	print("Player " + str(id) + " disconnected")
+	GameManager.Players.erase(id)
 
 # Called from clients
 func _connected_to_server():
