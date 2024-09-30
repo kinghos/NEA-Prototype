@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c380stnfxun0t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfw4h"]
+radius = 38.0526
+
+[node name="Fruit" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dfw4h")

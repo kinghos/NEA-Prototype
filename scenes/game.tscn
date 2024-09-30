@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3l0dpqpxjhxy"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_ssxi8"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ssxi8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1082.0
+offset_bottom = 2399.0
+color = Color(0.983998, 0.965783, 0.848374, 1)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(7, 222)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(225, 360, 350, 360, 350, 1870, 720, 1870, 720, 360, 845, 360, 845, 2000, 225, 2000)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -512.0
+offset_bottom = 512.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="OpponentCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(540, 1200)
